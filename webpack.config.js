@@ -1,6 +1,4 @@
-/**
- * Created by denis.korniychuk on 10/30/17.
- */
+
 var path = require('path');
 var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
@@ -12,7 +10,16 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.(js)$/, use: 'babel-loader' }
+            { test: /\.(js)$/, use: 'babel-loader'},
+
+
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" }
+                ]
+            }
         ]
     },
     plugins: [new HtmlWebpackPlugin({
