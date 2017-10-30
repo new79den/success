@@ -1,12 +1,15 @@
 import React from "react"
 import './App.component.css';
 import ArticleListComponent from "./ArticleListComponent/ArticleList.component"
+import store from "../store"
+import {Provider} from "react-redux"
 
 function AppComponent() {
     return (
-        <div>
+
+        <Provider store={store}>
             <ArticleListComponent/>
-        </div>
+        </Provider>
     )
 }
 
