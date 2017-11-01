@@ -1,0 +1,24 @@
+
+.buttonArticle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0074eb;
+    right: 50px;
+    display: inline-block;
+    float: right;
+}
+
+.DeleteArticle{
+    width: 100%;
+   margin-top: 20px;
+    background-color: red;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}

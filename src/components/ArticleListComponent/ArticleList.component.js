@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
-import ArticleComponent from "./ArticleComponent"
+import ArticleComponent from "./ArticleComponent/Article.component"
 
 class ArticleListComponent extends Component {
 

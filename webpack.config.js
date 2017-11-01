@@ -3,7 +3,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/Article.component.js',
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'build.js'
