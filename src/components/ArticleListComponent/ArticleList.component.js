@@ -2,6 +2,8 @@ import React, {Component} from "react"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import ArticleComponent from "./ArticleComponent/Article.component"
+import FormComponet from "./FormComponent/Form.componet"
+import SelectComponent from "./SelectComponent/select.component"
 
 class ArticleListComponent extends Component {
 
@@ -20,21 +22,34 @@ class ArticleListComponent extends Component {
 
 
     render() {
-        const article = this.props.articles.map((el)=>{
+        const article = this.props.articles.map((el) => {
             return <li key={el.id}>
-                <ArticleComponent id={el.id} title = {el.title} text = {el.text} comments = {el.comments}/>
+                <ArticleComponent id={el.id} title={el.title} text={el.text} comments={el.comments}/>
             </li>
         });
 
         return (
-            <ul>
-                {article}
-            </ul>
+            <div>
+                <FormComponet/>
+                <SelectComponent/>
+                <ul>
+                    {article}
+                </ul>
+            </div>
         )
     }
 }
 
 
-export default  connect(state=>{
-    return {articles: state.articles}
+export default  connect(state => {
+
+    const {articles, filter} = state;
+
+    const filerArticles = articles.filter(e => {
+        if (!filter.select.length) return true;
+
+        return filter.select.indexOf(e.id) !== -1
+    });
+
+    return {articles: filerArticles}
 })(ArticleListComponent)

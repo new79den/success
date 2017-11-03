@@ -1,0 +1,27 @@
+#name{
+    width:100%;
+    border: 1px solid #0074eb;
+}
+#comment{
+    width: 100%;
+    resize: none;
+    border: 1px solid #0074eb;
+}
+
+.formComponent label{
+    color: #0074eb;
+}
+
+.buttonComment{
+    width: 100%;
+    background-color: #0074eb;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0;
+    padding: 5px;
+}
+.buttonComment:hover{
+    cursor: pointer;
+    background-color: #007af7;
+}
