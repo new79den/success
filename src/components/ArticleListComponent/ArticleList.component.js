@@ -4,6 +4,7 @@ import {connect} from "react-redux"
 import ArticleComponent from "./ArticleComponent/Article.component"
 import FormComponet from "./FormComponent/Form.componet"
 import SelectComponent from "./SelectComponent/select.component"
+import TestIncrementComponent from "./TestIncrementComponent/TestIncrement.componet"
 
 class ArticleListComponent extends Component {
 
@@ -19,9 +20,10 @@ class ArticleListComponent extends Component {
             })
         )
     };
-
-
+    
     render() {
+        console.log("update");
+
         const article = this.props.articles.map((el) => {
             return <li key={el.id}>
                 <ArticleComponent id={el.id} title={el.title} text={el.text} comments={el.comments}/>
@@ -30,6 +32,7 @@ class ArticleListComponent extends Component {
 
         return (
             <div>
+                <TestIncrementComponent/>
                 <FormComponet/>
                 <SelectComponent/>
                 <ul>
