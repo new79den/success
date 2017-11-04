@@ -4,7 +4,11 @@ import {connect} from "react-redux"
 import ArticleComponent from "./ArticleComponent/Article.component"
 import FormComponet from "./FormComponent/Form.componet"
 import SelectComponent from "./SelectComponent/select.component"
+
 import TestIncrementComponent from "./TestIncrementComponent/TestIncrement.componet"
+
+import {filterSelector} from "../../selector/filter.selector"
+
 
 class ArticleListComponent extends Component {
 
@@ -20,7 +24,7 @@ class ArticleListComponent extends Component {
             })
         )
     };
-    
+
     render() {
         console.log("update");
 
@@ -45,14 +49,5 @@ class ArticleListComponent extends Component {
 
 
 export default  connect(state => {
-
-    const {articles, filter} = state;
-
-    const filerArticles = articles.filter(e => {
-        if (!filter.select.length) return true;
-
-        return filter.select.indexOf(e.id) !== -1
-    });
-
-    return {articles: filerArticles}
+    return {articles: filterSelector(state)}
 })(ArticleListComponent)
