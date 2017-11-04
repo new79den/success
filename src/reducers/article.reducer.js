@@ -7,7 +7,11 @@ export default (articleState = defultArticle, action) => {
 
     switch (type){
         case "DELETE_ARTICLE" :
-            return articleState.filter(el=>el.id !== payload.id)
+            return articleState.filter(el=>el.id !== payload.id);
+        case "ADD_ARTICLE" :
+            console.log("add");
+
+            return articleState
     }
 
     return articleState;

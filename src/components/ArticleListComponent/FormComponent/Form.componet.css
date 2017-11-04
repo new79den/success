@@ -1,8 +1,9 @@
-#name{
+#title{
     width:100%;
+    padding: 5px 0;
     border: 1px solid #0074eb;
 }
-#comment{
+#text{
     width: 100%;
     resize: none;
     border: 1px solid #0074eb;
@@ -10,6 +11,7 @@
 
 .formComponent label{
     color: #0074eb;
+    padding: 10px;
 }
 
 .buttonComment{
