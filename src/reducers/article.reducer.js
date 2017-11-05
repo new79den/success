@@ -1,4 +1,4 @@
-import {articles as defultArticle} from "../fixtures"
+import {normalizedArticles as defultArticle} from "../fixtures"
 
 export default (articleState = defultArticle, action) => {
 

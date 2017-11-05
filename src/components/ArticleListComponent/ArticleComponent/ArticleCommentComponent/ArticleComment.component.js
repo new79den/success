@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import propTypes from "prop-types"
 import toggleOpen from "../../../../decorators/toggleOpen"
+import Commonet from "./Comment/Comment.component"
 
 class ArticleCommetsComponent extends Component {
     static propTypes = {}
@@ -29,10 +30,9 @@ class ArticleCommetsComponent extends Component {
 
     getComments() {
         if(!this.props.isOpen){
-            const comment = this.props.comments.map(el=><li key={el.id}>
-                <h3>{el.user}</h3>
-                <p>{el.text}</p>
 
+            const comment = this.props.comments.map(id=><li key={id}>
+                <Commonet id = {id}/>
             </li>);
 
             return <ul>{comment}</ul>
