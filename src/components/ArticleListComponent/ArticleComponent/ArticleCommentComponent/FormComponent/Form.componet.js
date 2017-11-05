@@ -7,7 +7,7 @@ class FormComponet extends Component {
     static propTypes = {};
 
     state = {
-        title : "",
+        user : "",
         text: ""
     };
 
@@ -19,23 +19,25 @@ class FormComponet extends Component {
     
     addComment=()=>{
         this.props.dispatch({
-            type: "ADD_ARTICLE",
+            type: "ADD_COMMENT",
             payload: {
-                newArticle: {
-                    id: ""+Date.now(),
-                    date: ""+Date.now(),
-                    title: this.state.title,
-                    text: this.state.text
-                }
-            }
+                newComment: {
+                    user: this.state.user,
+                    text: this.state.text,
+                },
+                titleID: this.props.titleID
+            },
+            genterateId: true
         })
     };
 
     render() {
+
         return (
-            <div className="formComponent">
+
+        <div className="formComponent">
                 <label htmlFor="name">Title</label><br/>
-                <input type="text" onChange={this.setValueToState} id="title" value={this.state.title} />
+                <input type="text" onChange={this.setValueToState} id="user" value={this.state.user} />
                 <br/>
                 <label htmlFor="comment">Text</label><br/>
                 <textarea onChange={this.setValueToState} value={this.state.text} name="comment" id="text" cols="30" rows="5"></textarea>

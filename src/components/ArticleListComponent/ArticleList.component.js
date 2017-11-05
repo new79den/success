@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import ArticleComponent from "./ArticleComponent/Article.component"
-import FormComponet from "./FormComponent/Form.componet"
+
 import SelectComponent from "./SelectComponent/select.component"
 import TestIncrementComponent from "./TestIncrementComponent/TestIncrement.componet"
 
@@ -13,7 +13,7 @@ class ArticleListComponent extends Component {
 
     static propTypes = {
         articles: PropTypes.arrayOf(
-            PropTypes.shape({
+            PropTypes.shape({ 
 
                 id: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
@@ -36,7 +36,6 @@ class ArticleListComponent extends Component {
         return (
             <div>
                 <TestIncrementComponent/>
-                <FormComponet/>
                 <SelectComponent/>
                 <ul>
                     {article}

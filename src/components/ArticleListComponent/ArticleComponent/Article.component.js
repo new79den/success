@@ -30,7 +30,7 @@ class ArticleComponent extends Component {
 
                 { isOpen ? <div>
                     <p className="text">{text}</p>
-                    <ArticleCommetsComponent comments={comments}/>
+                    <ArticleCommetsComponent comments={comments} titleID = {id}/>
                     <button onClick={this.deleteArticle.bind(this, id)} className="DeleteArticle">delete article</button>
                 </div>
 

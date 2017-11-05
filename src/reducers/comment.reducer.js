@@ -4,7 +4,14 @@ import {arrToMap} from "../helper"
 const commantsMap = arrToMap(defultArticle);
 
 
-export default (articleState = commantsMap, action) => {
-    const {type, payload} = action;
-    return articleState;
+export default (commantsState = commantsMap, action) => {
+    const {type, payload, randomId} = action;
+
+    switch (type){
+        case "ADD_COMMENT" :
+            console.log({...commantsState, [randomId]: payload.newComment});
+
+            return {...commantsState, [randomId]: payload.newComment}
+    }
+    return commantsState;
 }

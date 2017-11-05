@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import propTypes from "prop-types"
 import toggleOpen from "../../../../decorators/toggleOpen"
 import Commonet from "./Comment/Comment.component"
+import FormComponet from "./FormComponent/Form.componet"
 
 class ArticleCommetsComponent extends Component {
     static propTypes = {}
@@ -15,7 +16,7 @@ class ArticleCommetsComponent extends Component {
         )
     }
 
-    getBody(){
+    getBody() {
         const {comments, isOpen, showBlock} = this.props;
 
 
@@ -29,13 +30,16 @@ class ArticleCommetsComponent extends Component {
     }
 
     getComments() {
-        if(!this.props.isOpen){
+        if (!this.props.isOpen) {
 
-            const comment = this.props.comments.map(id=><li key={id}>
-                <Commonet id = {id}/>
+            const comment = this.props.comments.map(id => <li key={id}>
+                <Commonet id={id}/>
             </li>);
 
-            return <ul>{comment}</ul>
+            return (<div>
+                <ul>{comment}</ul>
+                <FormComponet titleID = {this.props.titleID}/>
+            </div>)
         }
 
         return null
