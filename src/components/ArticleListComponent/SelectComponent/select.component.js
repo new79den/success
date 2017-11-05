@@ -4,6 +4,9 @@ import Select from "react-select"
 import 'react-select/dist/react-select.css';
 import {connect} from "react-redux";
 import "./select.component.css"
+import {mapToArr} from "../../../helper"
+
+
 class SelectComponet extends Component {
     static propTypes = {};
 
@@ -51,6 +54,6 @@ class SelectComponet extends Component {
 
 export default connect(state => {
 
-    return {articles: state.articles}
+    return {articles: mapToArr(state.articles)}
 
 })(SelectComponet)
